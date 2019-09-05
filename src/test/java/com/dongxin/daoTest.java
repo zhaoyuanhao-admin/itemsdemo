@@ -43,6 +43,9 @@ public class daoTest {
 		}
 	}
 
+	/**
+	 * 王宁好帅
+	 */
 	@Test
 	public void findEmpBySalary(){
 		List<Emp> empList = empdao.findEmpBySalary(1000,6000);
