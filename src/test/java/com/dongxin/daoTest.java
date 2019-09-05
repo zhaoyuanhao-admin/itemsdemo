@@ -54,6 +54,9 @@ public class daoTest {
 		}
 	}
 
+	/**
+	 * 王宁好帅好帅
+	 */
 	@Test
 	public void findAll(){
 		List<EmpAndDept> empList = empdao.findAny();
