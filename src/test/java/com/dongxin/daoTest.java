@@ -15,7 +15,9 @@ import java.util.List;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class daoTest {
-
+	/**
+	 * 王宁好帅
+	 */
 	@Autowired
 	EmpDao empdao;
 	@Autowired
