@@ -32,6 +32,9 @@ public class daoTest {
 		System.out.println(deptName);
 	}
 
+	/**
+	 * 王宁好帅
+	 */
 	@Test
 	public void findEmpByDeptName(){
 		List<Emp> empList = deptdao.findEmpByName("研发部");
