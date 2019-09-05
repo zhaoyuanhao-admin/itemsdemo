@@ -1,5 +1,8 @@
 package com.dongxin.entity;
 
+/**
+ * 包含员工表和部门表信息的实体类
+ */
 public class EmpAndDept {
 
 	private Integer empId;
