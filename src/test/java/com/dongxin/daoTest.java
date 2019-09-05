@@ -23,6 +23,9 @@ public class daoTest {
 	@Autowired
 	DeptDao deptdao;
 
+	/**
+	 * 王宁好帅
+	 */
 	@Test
 	public void findDeptNameByEmpId(){
 		String deptName = empdao.findDeptNameByEmpId(2);
