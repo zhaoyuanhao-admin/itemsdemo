@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="false">
+    <!--此处要引用defaults.xml，不能引用base.xml，因为base.xml中有root标签，对控制台打印输出一次，此处又有一次，-->
+    <!--因此，同一条日志会打印两次，因此，使用默认的defaults.xml即可-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="CONSOLE_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss} [%X{reqId}] %5p --- [%15.15t] %-40.40logger{39} : %m%n"/>
+    <property name="FILE_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss} [%X{reqId}] %5p --- [%15.15t] %-40.40logger{39} : %m%n"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>  <!-- 如果命中就禁止这条日志 -->
+            <onMismatch>ACCEPT</onMismatch>  <!-- 如果没有命中就使用这条规则 -->
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/info/%d{yyyyMMdd}-info.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/error/%d{yyyyMMdd}-error.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!-- swagger扫描的日志控制不输出 -->
+    <logger name="springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator" level="ERROR"
+            additivity="false"/>
+    <logger name="com.xxl.job.core.thread.ExecutorRegistryThread" level="ERROR"
+            additivity="false"/>
+    <logger name="springfox.documentation.spring.web.scanners.ApiListingReferenceScanner" level="ERROR"
+            additivity="false"/>
+
+    <springProfile name="prod">
+        <root level="INFO">
+            <appender-ref ref="infoAppender"/>
+            <appender-ref ref="errorAppender"/>
+        </root>
+    </springProfile>
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+</configuration>
