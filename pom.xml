@@ -5,7 +5,7 @@
             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.dongxin</groupId>
-    <artifactId>itemsdemo</artifactId>
+    <artifactId>beetsqldemo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>itemsdemo</name>
 
@@ -45,26 +45,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.ivy</groupId>
-            <artifactId>ivy</artifactId>
-            <version>2.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ibeetl</groupId>
-            <artifactId>beetlsql</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ibeetl</groupId>
-            <artifactId>beetlsql</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.41</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -83,7 +63,7 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <finalName>itemsdemo</finalName>
+                    <finalName>beetsqldemo</finalName>
                     <!--加上下面这一句，上面的finalName是什么，打包出来的目录就叫什么-->
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
