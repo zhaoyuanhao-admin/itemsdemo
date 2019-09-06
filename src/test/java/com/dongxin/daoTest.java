@@ -15,18 +15,26 @@ import java.util.List;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class daoTest {
-
+	/**
+	 * 王宁好帅
+	 */
 	@Autowired
 	EmpDao empdao;
 	@Autowired
 	DeptDao deptdao;
 
+	/**
+	 * 王宁好帅
+	 */
 	@Test
 	public void findDeptNameByEmpId(){
 		String deptName = empdao.findDeptNameByEmpId(2);
 		System.out.println(deptName);
 	}
 
+	/**
+	 * 王宁好帅
+	 */
 	@Test
 	public void findEmpByDeptName(){
 		List<Emp> empList = deptdao.findEmpByName("研发部");
@@ -35,6 +43,9 @@ public class daoTest {
 		}
 	}
 
+	/**
+	 * 王宁好帅
+	 */
 	@Test
 	public void findEmpBySalary(){
 		List<Emp> empList = empdao.findEmpBySalary(1000,6000);
@@ -43,6 +54,9 @@ public class daoTest {
 		}
 	}
 
+	/**
+	 * 王宁好帅好帅
+	 */
 	@Test
 	public void findAll(){
 		List<EmpAndDept> empList = empdao.findAny();
