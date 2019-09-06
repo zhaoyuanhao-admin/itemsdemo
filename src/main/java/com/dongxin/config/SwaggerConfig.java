@@ -1,4 +1,7 @@
 package com.dongxin.config;
+/**
+ * demo02
+ */
 
 import cn.hutool.core.util.StrUtil;
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
