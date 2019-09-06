@@ -1,6 +1,6 @@
 package com.dongxin.config;
 /**
- * 我又回来了！
+ * test
  */
 
 import cn.hutool.core.util.StrUtil;
