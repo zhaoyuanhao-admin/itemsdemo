@@ -1,5 +1,7 @@
 package com.dongxin.config;
-
+/**
+ * demo05
+ */
 import cn.hutool.core.util.StrUtil;
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;
